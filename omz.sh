@@ -1,6 +1,6 @@
 #!/bin/bash
 ### 1、安装zsh 
-apt-get -y install zsh curl iftop mtr git lrzsz wget dos2unix zip unzip
+apt-get -y install zsh 
 ### 2、安装完毕以后，你需要将zsh替换为你的默认shell,输入下面命令进行替换:
 chsh -s /bin/zsh
 ### 3、安装Oh My Zsh
