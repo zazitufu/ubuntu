@@ -5,6 +5,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ### 6、修改本用户~/.zshrc
 sed -i 's/plugins=(git)/plugins=(\ngit\nzsh-autosuggestions\nzsh-syntax-highlighting\n)/' ~/.zshrc
 ### 7、添加路径/aabin
-echo \'export PATH=\"\$PATH:/aabin\"\' >> ~/.zshrc
+echo export PATH="$PATH:/aabin" >> ~/.zshrc
 ### 8、重启zsh
 source ~/.zshrc
