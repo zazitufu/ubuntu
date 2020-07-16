@@ -1,3 +1,4 @@
+#!/bin/bash
 ### 4、安装插件zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ### 5、安装插件zsh-syntax-highlighting
