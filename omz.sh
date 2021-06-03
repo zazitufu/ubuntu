@@ -10,9 +10,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ### 5、修改本用户~/.zshrc
 sed -i 's/plugins=(git)/plugins=(\ngit\nzsh-autosuggestions\nzsh-syntax-highlighting\n)/' ~/.zshrc
-### 6、添加路径/aabin
+### 6 建立两个目录
+mkdir /aalog && mkdir /aabin && echo \'export PATH=\"\$PATH:/aabin\"\' >> /etc/profile
+### 7、添加路径/aabin
 echo \'export PATH=\"\$PATH:/aabin\"\' >> ~/.zshrc
-### 7、安装完毕以后，你需要将zsh替换为你的默认shell,输入下面命令进行替换:
+### 8、安装完毕以后，你需要将zsh替换为你的默认shell,输入下面命令进行替换:
 chsh -s /bin/zsh
-### 8、重启zsh
+### 9、重启zsh
 source ~/.zshrc
