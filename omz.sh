@@ -1,4 +1,6 @@
 #!/bin/bash
+##### 运行完后reboot一下系统。使用方法:
+##### bash <(curl -s -L https://github.com/zazitufu/ubuntu/raw/master/omz.sh)
 ### 1、安装zsh 
 apt-get update
 apt-get -y install zsh git wget
