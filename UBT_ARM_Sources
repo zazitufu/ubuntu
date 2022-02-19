@@ -1,0 +1,48 @@
+### Ubuntu arm 官方源，注意修改对应版本的代码。
+## 16.04 LTS xenial
+## 18.04 LTS bionic
+## 20.04 LTS focal
+## 22.04 LTS jammy
+---
+
+##官方源推荐外国用户使用
+
+deb http://ports.ubuntu.com/ bionic main restricted universe multiverse
+deb-src http://ports.ubuntu.com/ bionic main restricted universe multiverse
+deb http://ports.ubuntu.com/ bionic-updates main restricted universe multiverse
+deb-src http://ports.ubuntu.com/ bionic-updates main restricted universe multiverse
+deb http://ports.ubuntu.com/ bionic-security main restricted universe multiverse
+deb-src http://ports.ubuntu.com/ bionic-security main restricted universe multiverse
+deb http://ports.ubuntu.com/ bionic-backports main restricted universe multiverse
+deb-src http://ports.ubuntu.com/ bionic-backports main restricted universe multiverse
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic main universe restricted
+deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic main universe restricted
+---
+
+#中科大 ubt arm源
+
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-updates main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-updates main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-security main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-security main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-backports main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-backports main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial main universe restricted
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial main universe restricted
+-----
+
+#清华 ubt arm 源
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ xenial-updates main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ xenial-updates main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ xenial-security main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ xenial-security main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ xenial-backports main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ xenial-backports main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ xenial main universe restricted
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ xenial main universe restricted
+---
+
+国内用户可使用华为arm源
+
+sudo wget -O /etc/apt/sources.list https://repo.huaweicloud.com/repository/conf/Ubuntu-Ports-bionic.list
+
