@@ -1,6 +1,6 @@
 #!/bin/bash
-##### version 0.3
-##### 2022年3月22日15点04分
+##### version 0.4
+##### 2022年3月22日16点04分
 ##### 运行完后reboot一下系统。使用方法:
 ##### bash <(curl -s -L https://github.com/zazitufu/ubuntu/raw/master/omz.sh)
 ##### bash <(curl -sL https://git.io/zaziomz)
@@ -53,6 +53,6 @@ function noproxy() {
 EOF
 
 ### 8、安装完毕以后，你需要将zsh替换为你的默认shell,输入下面命令进行替换:
-chsh -s /usr/bin/zsh
-### 9、重启zsh
-source ~/.zshrc
+#chsh -s /usr/bin/zsh
+zsh
+### 完结撒花
