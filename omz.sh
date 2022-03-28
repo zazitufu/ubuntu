@@ -1,6 +1,6 @@
 #!/bin/bash
-##### version 0.4
-##### 2022年3月22日16点04分
+##### version 0.5
+##### 2022年3月29日01点53分
 ##### 运行完后reboot一下系统。使用方法:
 ##### bash <(curl -s -L https://github.com/zazitufu/ubuntu/raw/master/omz.sh)
 ##### bash <(curl -sL https://git.io/zaziomz)
@@ -32,10 +32,10 @@ alias gip="curl -s https://api.myip.la"
 # 会影响scp 对路径中的通配符进行展开，先取消 echo alias scp=\'noglob scp\' >> ~/.zshrc
 
 ## Automatically quote globs in URL and remote references ，解决zsh下的通配符*的展开故障。
-__remote_commands=(scp rsync)
-autoload -U url-quote-magic
-zle -N self-insert url-quote-magic
-zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
+#__remote_commands=(scp rsync)
+#autoload -U url-quote-magic
+#zle -N self-insert url-quote-magic
+#zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
 
 ## 代理服务器
 # set a local proxy
