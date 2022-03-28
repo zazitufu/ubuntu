@@ -53,6 +53,6 @@ function noproxy() {
 EOF
 
 ### 8、安装完毕以后，你需要将zsh替换为你的默认shell,输入下面命令进行替换:
-#chsh -s /usr/bin/zsh
 zsh
+chsh -s /usr/bin/zsh
 ### 完结撒花
