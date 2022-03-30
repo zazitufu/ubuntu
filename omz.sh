@@ -1,6 +1,6 @@
 #!/bin/bash
-##### version 0.5
-##### 2022年3月29日01点53分
+##### version 0.6
+##### 2022年3月30日 23点05分
 ##### 运行完后reboot一下系统。使用方法:
 ##### bash <(curl -s -L https://github.com/zazitufu/ubuntu/raw/master/omz.sh)
 ##### bash <(curl -sL https://git.io/zaziomz)
@@ -29,6 +29,8 @@ export PATH=$PATH:/aabin
 alias cdl="cd /aalog"
 alias cdb="cd /aabin"
 alias gip="curl -s https://api.myip.la"
+alias sysre="systemctl restart"
+alias sysst="systemctl status"
 # 会影响scp 对路径中的通配符进行展开，先取消 echo alias scp=\'noglob scp\' >> ~/.zshrc
 
 ## Automatically quote globs in URL and remote references ，解决zsh下的通配符*的展开故障。
