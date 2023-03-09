@@ -28,9 +28,11 @@ cat << "EOF" >> ~/.zshrc
 export PATH=$PATH:/aabin
 alias cdl="cd /aalog"
 alias cdb="cd /aabin"
-alias gip="curl -s https://api.myip.la"
+alias gip="curl ip.test.vin"
 alias sysre="systemctl restart"
 alias sysst="systemctl status"
+alias rere='function _rere(){ systemctl restart "$1" && systemctl status "$1"; };_rere'
+alias nano="nano -c"
 # 会影响scp 对路径中的通配符进行展开，先取消 echo alias scp=\'noglob scp\' >> ~/.zshrc
 
 ## Automatically quote globs in URL and remote references ，解决zsh下的通配符*的展开故障。
