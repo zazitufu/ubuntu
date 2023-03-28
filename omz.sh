@@ -1,6 +1,6 @@
 #!/bin/bash
-##### version 0.6
-##### 2022年3月30日 23点05分
+##### version 0.7
+##### 2023年3月29日 02点04分
 ##### 运行完后reboot一下系统。使用方法:
 ##### bash <(curl -s -L https://github.com/zazitufu/ubuntu/raw/master/omz.sh)
 ##### bash <(curl -sL https://git.io/zaziomz)
@@ -29,10 +29,10 @@ export PATH=$PATH:/aabin
 alias cdl="cd /aalog"
 alias cdb="cd /aabin"
 alias gip="curl ip.test.vin"
-alias sysre="systemctl restart"
-alias sysst="systemctl status"
-alias rere='function _rere(){ systemctl restart "$1" && systemctl status "$1"; };_rere'
+alias syre="systemctl restart"
+alias syst="systemctl status"
 alias nano="nano -c"
+alias lsn="lsof -i | grep LISTEN"
 # 会影响scp 对路径中的通配符进行展开，先取消 echo alias scp=\'noglob scp\' >> ~/.zshrc
 
 ## Automatically quote globs in URL and remote references ，解决zsh下的通配符*的展开故障。
@@ -54,9 +54,19 @@ function proxyr() {
 function noproxy() {
     unset ALL_PROXY
 }
+
+## 其他函数
+# 重启并查看服务状态
+function rere() {
+   systemctl restart "$1"
+   sleep 2
+   systemctl status "$1"
+}
 EOF
 
 ### 8、安装完毕以后，你需要将zsh替换为你的默认shell,输入下面命令进行替换:
-zsh
+## 切换默认shell为zsh
 chsh -s /usr/bin/zsh
+## 运行zsh shell
+zsh
 ### 完结撒花
