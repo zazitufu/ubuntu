@@ -1,6 +1,6 @@
 #!/bin/bash
-##### version 0.7
-##### 2023年3月29日 02点04分
+##### version 0.8
+##### 2023年12月8日 11点29分
 ##### 运行完后reboot一下系统。使用方法:
 ##### bash <(curl -s -L https://github.com/zazitufu/ubuntu/raw/master/omz.sh)
 ##### bash <(curl -sL https://git.io/zaziomz)
@@ -36,10 +36,10 @@ alias lsn="lsof -i | grep LISTEN"
 # 会影响scp 对路径中的通配符进行展开，先取消 echo alias scp=\'noglob scp\' >> ~/.zshrc
 
 ## Automatically quote globs in URL and remote references ，解决zsh下的通配符*的展开故障。
-#__remote_commands=(scp rsync)
-#autoload -U url-quote-magic
-#zle -N self-insert url-quote-magic
-#zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
+__remote_commands=(scp rsync)
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
 
 ## 代理服务器
 # set a local proxy
@@ -64,7 +64,19 @@ function rere() {
 }
 EOF
 
-### 8、安装完毕以后，你需要将zsh替换为你的默认shell,输入下面命令进行替换:
+### 8、解决agnoster主题，在使用自动补全时，第一个输入的字符会自动重复且无法删除的问题。
+# 主题文件路径
+THEME_FILE="$HOME/.oh-my-zsh/themes/agnoster.zsh-theme"
+
+# 备份原始主题文件
+cp $THEME_FILE "${THEME_FILE}.bak"
+
+# 注释掉原有的 PROMPT 行，并添加新的 PROMPT 行
+sed -i '' '/^PROMPT=/ s/^/#/' $THEME_FILE
+echo "PROMPT='%{%f%b%k%}$(build_prompt)%{ %}'" >> $THEME_FILE
+##
+
+### 9、安装完毕以后，你需要将zsh替换为你的默认shell,输入下面命令进行替换:
 ## 切换默认shell为zsh
 chsh -s /usr/bin/zsh
 ## 运行zsh shell
