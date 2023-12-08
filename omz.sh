@@ -68,12 +68,21 @@ EOF
 # 主题文件路径
 THEME_FILE="$HOME/.oh-my-zsh/themes/agnoster.zsh-theme"
 
+# 检查主题文件是否存在
+if [ ! -f "$THEME_FILE" ]; then
+    echo "agnoster.zsh-theme not found at $THEME_FILE"
+    exit 1
+fi
+
 # 备份原始主题文件
-cp $THEME_FILE "${THEME_FILE}.bak"
+cp "$THEME_FILE" "${THEME_FILE}.bak"
 
 # 注释掉原有的 PROMPT 行，并添加新的 PROMPT 行
-sed -i '' '/^PROMPT=/ s/^/#/' $THEME_FILE
-echo "PROMPT='%{%f%b%k%}$(build_prompt)%{ %}'" >> $THEME_FILE
+sed -i '/^PROMPT=/ s/^/#/' "$THEME_FILE"
+echo "PROMPT='%{%f%b%k%}\$(build_prompt)%{ %}'" >> "$THEME_FILE"
+
+# 提示完成
+echo "agnoster theme modified successfully."
 ##
 
 ### 9、安装完毕以后，你需要将zsh替换为你的默认shell,输入下面命令进行替换:
