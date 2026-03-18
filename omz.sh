@@ -26,6 +26,15 @@ mkdir /aalog && mkdir /aabin
 ### 7、添加下面整段环境变量到 ~/.zshrc
 cat << "EOF" >> ~/.zshrc
 export PATH=$PATH:/aabin
+## 关键：自动继承 nvm 和 pnpm (如果存在的话)
+if [ -f ~/.bashrc ]; then
+    # 也可以选择直接 source .bashrc，但为了性能，建议只提取 PATH 相关
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    
+    export PNPM_HOME="/root/.local/share/pnpm"
+    [[ ":$PATH:" != *":$PNPM_HOME:"* ]] && export PATH="$PNPM_HOME:$PATH"
+fi
 alias cdl="cd /aalog"
 alias cdb="cd /aabin"
 alias gip="curl ip.test.vin"
