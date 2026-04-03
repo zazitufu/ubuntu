@@ -16,17 +16,17 @@ read -p "请输入数字 [1-4] (默认为 1): " MIRROR_CHOICE
 
 case $MIRROR_CHOICE in
     2)
-        SELECTED_MIRROR="https://mirrors.tuna.tsinghua.edu.cn/debian/"
+        SELECTED_MIRROR="mirrors.tuna.tsinghua.edu.cn/debian/"
         ;;
     3)
         # 华为云必须使用 https，且 dd.sh 校验时可能需要完整的路径
-        SELECTED_MIRROR="https://mirrors.huaweicloud.com/debian/"
+        SELECTED_MIRROR="mirrors.huaweicloud.com/debian/"
         ;;
     4)
-        SELECTED_MIRROR="http://deb.debian.org/debian/"
+        SELECTED_MIRROR="deb.debian.org/debian/"
         ;;
     *)
-        SELECTED_MIRROR="http://mirrors.tencentyun.com/debian/"
+        SELECTED_MIRROR="mirrors.tencentyun.com/debian/"
         ;;
 esac
 
