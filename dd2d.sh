@@ -7,26 +7,25 @@
 
 echo "------------------------------------------------"
 echo "请选择安装时使用的 Debian 镜像源:"
-echo "1) 腾讯云 (推荐)"
+echo "1) ftp.cn.debian.org(推荐)"
 echo "2) 清华大学"
-echo "3) 华为云 (若报错请选 2)"
+echo "3) 中科大"
 echo "4) 全球 CDN (海外推荐)"
 echo "------------------------------------------------"
 read -p "请输入数字 [1-4] (默认为 1): " MIRROR_CHOICE
 
 case $MIRROR_CHOICE in
     2)
-        SELECTED_MIRROR="mirrors.tuna.tsinghua.edu.cn/debian/"
+        SELECTED_MIRROR="http://mirrors.tuna.tsinghua.edu.cn/debian/"
         ;;
     3)
-        # 华为云必须使用 https，且 dd.sh 校验时可能需要完整的路径
-        SELECTED_MIRROR="mirrors.huaweicloud.com/debian/"
+        SELECTED_MIRROR="http://mirrors.ustc.edu.cn/debian/"
         ;;
     4)
         SELECTED_MIRROR="deb.debian.org/debian/"
         ;;
     *)
-        SELECTED_MIRROR="mirrors.tencentyun.com/debian/"
+        SELECTED_MIRROR="http://ftp.cn.debian.org/debian/"
         ;;
 esac
 
