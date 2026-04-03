@@ -9,7 +9,7 @@ apt-get update
 apt-get install -y xz-utils openssl gawk file wget 
 
 # 下载主脚本
-wget --no-check-certificate https://raw.githubusercontent.com/zazitufu/ubuntu/master/dd.sh
+wget --no-check-certificate https://ghproxy.net/https://raw.githubusercontent.com/zazitufu/ubuntu/master/dd.sh
 chmod a+x dd.sh
 
 # 镜像源选择菜单
