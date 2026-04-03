@@ -1,9 +1,11 @@
 #!/bin/bash
+### 本脚本用来快速DD为Debian12，默认为使用全球CDN的镜像 deb.debian.org
+### 使用其他镜像可在此网址搜寻：https://www.debian.org/mirror/list
+### 香港站为：http://ftp.hk.debian.org/debian/
 ### 20260403
 ### 本脚本用来快速DD为Debian12
 ### 针对中国大陆VPS增加了镜像源选择功能
 ### 默认root密码为Test233，首次登录后修改。
-# ... (前面的安装基础组件和下载 dd.sh 部分保持不变) ...
 
 echo "------------------------------------------------"
 echo "请选择安装时使用的 Debian 镜像源:"
@@ -37,6 +39,10 @@ FINAL_MIRROR=$(echo $SELECTED_MIRROR | sed -e 's|https://||' -e 's|http://||')
 
 echo "正在尝试使用镜像: $SELECTED_MIRROR"
 
-# 如果 dd.sh 依然报错，请尝试将下面命令中的 --mirror 后面直接写死为：
-# mirrors.huaweicloud.com/debian/
+# 准备基础组件
+apt-get update
+apt-get install -y xz-utils openssl gawk file wget 
+# 使用加速站中转下载
+wget --no-check-certificate https://ghproxy.net/https://raw.githubusercontent.com/zazitufu/ubuntu/master/dd.sh
+chmod a+x dd.sh
 bash dd.sh -d 12 -v 64 -a --mirror "$FINAL_MIRROR" -p Test233
