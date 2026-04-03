@@ -25,7 +25,7 @@ case $MIRROR_CHOICE in
         SELECTED_MIRROR="deb.debian.org/debian/"
         ;;
     *)
-        SELECTED_MIRROR="http://ftp.cn.debian.org/debian/"
+        SELECTED_MIRROR="ftp.cn.debian.org/debian/"
         ;;
 esac
 
